@@ -27,8 +27,6 @@ repositories {
 
 
 dependencies {
-    // 공통 모듈에서 필요한 의존성
-    implementation 'org.springframework.boot:spring-boot-starter-web' // 공통 설정용
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 }

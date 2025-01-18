@@ -1,25 +1,24 @@
 package com.dpflsy.common.dto;
 
-import lombok.Data;
+import lombok.Builder;
 
 import java.util.List;
-import java.time.LocalDateTime;
 
-@Data
-public class MovieResponse {
-    private Long id;
-    private String title;
-    private String rating;
-    private String genre;
-    private String thumbnailUrl;
-    private String releaseDate;
-    private Integer runtime;
-    private List<ScheduleResponse> schedules;
-
-    @Data
-    public static class ScheduleResponse {
-        private Long id;
-        private LocalDateTime startTime;
-        private LocalDateTime endTime;
-    }
+@Builder
+public record MovieResponse(
+        Long id,
+        String title,
+        String rating,
+        String genre,
+        String thumbnailUrl,
+        String releaseDate,
+        Integer runtime,
+        List<ScheduleResponse> schedules
+) {
+    @Builder
+    public record ScheduleResponse(
+            Long id,
+            String startTime,
+            String endTime
+    ) {}
 }
